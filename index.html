@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rules & Benefit Pembelian</title>
   <style>
     body {
@@ -16,6 +16,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     .container {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
@@ -23,25 +24,50 @@
       border-radius: 10px;
       flex: 1;
     }
+
     h1 {
       text-align: center;
       font-size: 2em;
       margin-bottom: 30px;
     }
+
+    .typed-text {
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      border-right: 2px solid white;
+    }
+
+    .cursor {
+      display: inline-block;
+      font-weight: bold;
+      animation: blink 0.7s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
     .faq {
       margin-bottom: 25px;
     }
+
     .faq h2 {
       color: #ffd700;
       font-size: 1.3em;
     }
+
     .faq ul {
       padding-left: 20px;
       list-style-type: decimal;
     }
+
     .faq ul li {
       margin-bottom: 5px;
     }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -53,7 +79,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Rules & Benefit Pembelian</h1>
+    <h1><span class="typed-text"></span><span class="cursor">|</span></h1>
 
     <div class="faq">
       <h2>— Script Lynxxx Botz</h2>
@@ -92,7 +118,8 @@
       <ul>
         <li>Mendapat akses penuh ke sistem database: add, delete, dan list database.</li>
         <li>Free update selamanya selama project masih aktif.</li>
-        <li>Diperbolehkan menjual script dengan syarat wajib izin terlebih dahulu.</li>
+        <li>Diperbolehkan menjual script & advance dengan syarat wajib tidak boleh menjual owner script.</li>
+        <li>Jika Ada Buyer Yang Ingin Update Ke Advance Atau Ke Owner, Wajib Ke Developer!</li>
         <li>Wajib melakukan add database sendiri melalui script yang dikasih developer.</li>
         <li>Mendapatkan dua versi script: versi buyer dan versi owner (system db).</li>
         <li>Wajib menjaga keamanan dan kerahasiaan script.</li>
@@ -106,7 +133,6 @@
     </div>
   </div>
 
-  <!-- BAGIAN BARU: HUKUMAN PELANGGARAN -->
   <div class="container">
     <h1>Hukuman Pelanggaran</h1>
 
@@ -144,5 +170,39 @@
   <footer>
     © 2025 - DhikzxDev
   </footer>
+
+  <!-- ANIMASI KETIK -->
+  <script>
+    const typedText = document.querySelector(".typed-text");
+    const textArray = ["Rules & Benefit Pembelian", "Ketentuan Penggunaan", "Syarat Pembelian", "Lynxxx Botz Script Rules"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let delay = 100;
+
+    function type() {
+      const currentText = textArray[textIndex];
+      if (isDeleting) {
+        typedText.textContent = currentText.substring(0, charIndex--);
+        delay = 50;
+      } else {
+        typedText.textContent = currentText.substring(0, charIndex++);
+        delay = 100;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        delay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % textArray.length;
+        delay = 500;
+      }
+
+      setTimeout(type, delay);
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
 </body>
-</html>
+  </html>
