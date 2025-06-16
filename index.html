@@ -68,6 +68,25 @@
       margin-bottom: 5px;
     }
 
+    .contact-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+
+    .contact-box a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -165,13 +184,16 @@
         <li>Tindakan hukum/etika jika merugikan developer.</li>
       </ul>
     </div>
+
+    <div class="contact-box">
+      📞 Contact Developer: <a href="https://wa.me/6285810287828" target="_blank">@Dhikzx_Cloud</a>
+    </div>
   </div>
 
   <footer>
     © 2025 - DhikzxDev
   </footer>
 
-  <!-- ANIMASI KETIK -->
   <script>
     const typedText = document.querySelector(".typed-text");
     const textArray = ["Rules & Benefit Pembeliann", "Ketentuan Penggunaann"];
@@ -191,7 +213,7 @@
       }
 
       if (!isDeleting && charIndex === currentText.length) {
-        delay = 5000;
+        delay = 3000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -205,4 +227,4 @@
     document.addEventListener("DOMContentLoaded", type);
   </script>
 </body>
-  </html>
+</html>
