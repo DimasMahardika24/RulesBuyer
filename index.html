@@ -94,6 +94,31 @@
       background-color: rgba(0, 0, 0, 0.6);
       color: #ccc;
     }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
   </style>
 </head>
 <body>
@@ -185,13 +210,10 @@
       </ul>
     </div>
 
-    <!-- Tambahkan ini SEBELUM footer -->
-<div style="text-align: center; margin: 20px; background: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 10px; width: fit-content; margin-left: auto; margin-right: auto;">
-  Contact Developer: 
-  <a href="https://wa.me/6285810287828" target="_blank" style="color: #ffd700; text-decoration: none;">
-    @Dhikzx_Cloud
+  <!-- Tombol WhatsApp Mengambang -->
+  <a href="https://wa.me/6285810287828" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
-</div>
 
   <footer>
     © 2025 - DhikzxDev
@@ -230,4 +252,4 @@
     document.addEventListener("DOMContentLoaded", type);
   </script>
 </body>
-</html>
+  </html>
