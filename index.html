@@ -174,7 +174,7 @@
   <!-- ANIMASI KETIK -->
   <script>
     const typedText = document.querySelector(".typed-text");
-    const textArray = ["Rules & Benefit Pembelian"];
+    const textArray = ["Rules & Benefit Pembeliann", "Ketentuan Penggunaann"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -191,7 +191,7 @@
       }
 
       if (!isDeleting && charIndex === currentText.length) {
-        delay = 2000;
+        delay = 5000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
