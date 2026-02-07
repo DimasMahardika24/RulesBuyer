@@ -3,108 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rules & Benefit Pembelian</title>
+  <title>Rules & Benefit Pembelian | DhikzxDev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #ffd700;
+      --success-color: #25d366;
+      --bg-overlay: rgba(0, 0, 0, 0.75);
+      --glass-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background: url('https://files.catbox.moe/ojr7sl.jpeg') no-repeat center center fixed;
       background-size: cover;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: white;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      flex: 1;
+      background-color: var(--bg-overlay);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 800px;
+      width: calc(100% - 40px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
     }
 
     h1 {
       text-align: center;
-      font-size: 2em;
+      font-size: 1.8em;
       margin-bottom: 30px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .typed-text {
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      border-right: 2px solid white;
+      color: var(--primary-color);
+      border-right: 2px solid var(--primary-color);
     }
 
     .cursor {
-      display: inline-block;
-      font-weight: bold;
-      animation: blink 0.7s steps(1) infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+      display: none; /* Disembunyikan karena border-right sudah cukup */
     }
 
     .faq {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
+      background: var(--glass-bg);
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .faq h2 {
-      color: #ffd700;
-      font-size: 1.3em;
+      color: var(--primary-color);
+      font-size: 1.2em;
+      margin-top: 0;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 15px;
+      display: flex;
+      align-items: center;
     }
 
     .faq ul {
-      padding-left: 20px;
+      padding-left: 25px;
       list-style-type: decimal;
     }
 
     .faq ul li {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+      font-size: 0.95em;
+    }
+
+    .price-tag {
+      color: var(--success-color);
+      font-weight: bold;
+      background: rgba(37, 211, 102, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     footer {  
-  text-align: center;  
-  padding: 15px;  
-  font-size: 0.9em;  
-  background-color: rgba(0, 0, 0, 0.6);  
-  color: #ccc;  
-      }
+      text-align: center;  
+      padding: 20px;  
+      font-size: 0.85em;  
+      background-color: rgba(0, 0, 0, 0.8);  
+      color: #aaa;
+      margin-top: auto;
+    }
 
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
       width: 60px;
       height: 60px;
-      background-color: #25d366;
+      background-color: var(--success-color);
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.15) rotate(10deg);
     }
 
     .whatsapp-float img {
-      width: 35px;
-      height: 35px;
+      width: 32px;
+      height: 32px;
     }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1><span class="typed-text"></span><span class="cursor"></span></h1>
+    <h1><span class="typed-text"></span></h1>
 
     <div class="faq">
       <h2>— Script Lynxxx Botz</h2>
@@ -116,8 +158,8 @@
         <li>Free update maksimal 1x setelah pembelian.</li>
         <li>Maksimal ganti database 3x.</li>
         <li>Maksimal 1 nomor setiap kali add database.</li>
-        <li>Upgrade ke Advanced Script hanya Rp15.000.</li>
-        <li>Upgrade Ke Owner Script hanya Rp45.000.</li>
+        <li>Upgrade ke Advanced Script hanya <span class="price-tag">Rp15.000</span>.</li>
+        <li>Upgrade Ke Owner Script hanya <span class="price-tag">Rp45.000</span>.</li>
         <li>Dilarang menghapus atau mengubah watermark.</li>
       </ul>
     </div>
@@ -133,7 +175,7 @@
         <li>Free update selamanya selama script masih aktif.</li>
         <li>Maksimal ganti database 5-7x.</li>
         <li>Maksimal 2 nomor setiap kali add database.</li>
-        <li>Upgrade ke Owner hanya Rp25.000.</li>
+        <li>Upgrade ke Owner hanya <span class="price-tag">Rp25.000</span>.</li>
         <li>Dilarang menghapus atau mengubah watermark.</li>
       </ul>
     </div>
@@ -190,21 +232,19 @@
         <li>Tindakan hukum/etika jika merugikan developer.</li>
       </ul>
     </div>
+  </div>
 
-  <!-- Tombol WhatsApp Mengambang -->
-  <a href="https://wa.me/6285810287828" target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/6285810287828" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
-    </div>    
   <footer>  
     © 2025 - DhikzxDev  
   </footer>   
   
-  <!-- ANIMASI KETIK -->    
   <script>  
     const typedText = document.querySelector(".typed-text");
-    const textArray = ["Rules & Benefit Pembeliann", "Ketentuan Penggunaann"];
+    const textArray = ["Rules & Benefit Pembelian", "Ketentuan Penggunaan"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -221,7 +261,7 @@
       }
 
       if (!isDeleting && charIndex === currentText.length) {
-        delay = 3000;
+        delay = 3000; // Jeda saat teks penuh
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -235,4 +275,4 @@
     document.addEventListener("DOMContentLoaded", type);
   </script>
 </body>
-  </html>
+</html>
